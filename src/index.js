@@ -34,7 +34,7 @@ class Subscribe extends Component {
       // Observables may be scheduled async or sync, so this subscribe callback
       // might immediately run or it it might not.
       this.subscription = childrenToObservable(children).subscribe(element => {
-        if (Array.isArray(element)) {
+        if (Number(React.version.slice(0, React.version.indexOf('.'))) < 16 && Array.isArray(element)) {
           throw new TypeError('<Subscribe> streams cannot return arrays because of React limitations');
         }
 

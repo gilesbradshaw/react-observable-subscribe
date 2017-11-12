@@ -62,7 +62,7 @@ ReactDOM.render(<Example stream={stream} />, container);
 ```
 ![ezgif-79206338](https://cloud.githubusercontent.com/assets/762949/14999593/166d7bbe-113f-11e6-9097-69dd24b76781.gif)
 
-The observable can emit simple primitives (e.g. strings, numbers) or you can even emit JSX elements! Each "onNext" just needs to be a single value, arrays are not supported because of React limitations.
+The observable can emit simple primitives (e.g. strings, numbers) or you can even emit JSX elements! Each "onNext" just needs to be a single value, arrays are not supported for React versions < 16 because of React limitations.
 
 When the observable emits new values, only the content inside `<Subscribe>` will re-render, not the component in which you declare it, so it's very efficient.
 
